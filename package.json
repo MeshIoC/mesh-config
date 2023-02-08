@@ -1,6 +1,6 @@
 {
     "name": "mesh-config",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "description": "Configuration microframework for Mesh IoC",
     "type": "module",
     "sideEffects": false,
