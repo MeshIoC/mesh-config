@@ -53,13 +53,16 @@ export function getClassConfigs(classOrProto: any): ConfigDecl[] {
 /**
  * Returns all `@config()` declarations for all classes bound to the container.
  */
-export function getMeshConfigs(mesh: Mesh): ConfigDecl[] {
+export function getMeshConfigs(mesh: Mesh, recursive = true): ConfigDecl[] {
     const result: ConfigDecl[] = [];
     for (const binding of mesh.bindings.values()) {
         if (binding.type === 'service') {
             const configs = getClassConfigs(binding.class);
             result.push(...configs);
         }
+    }
+    if (recursive && mesh.parent) {
+        result.push(...getMeshConfigs(mesh.parent, recursive));
     }
     return result.sort((a, b) => a.key > b.key ? 1 : -1);
 }
