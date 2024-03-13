@@ -32,18 +32,18 @@
     "author": "Boris Okunskiy",
     "license": "ISC",
     "dependencies": {
-        "mesh-ioc": "^3.2.0",
+        "mesh-ioc": "^3.3.0",
         "reflect-utils": "^1.0.3"
     },
     "devDependencies": {
-        "@nodescript/eslint-config": "^1.0.0",
+        "@nodescript/eslint-config": "^1.2.0",
         "@types/mocha": "^8.2.3",
-        "@types/node": "^16.3.1",
+        "@types/node": "^16.18.88",
         "chalk": "^4.1.2",
-        "eslint": "^8.24.0",
-        "mocha": "^9.0.2",
+        "eslint": "^8.57.0",
+        "mocha": "^9.2.2",
         "pre-commit": "^1.2.2",
-        "reflect-metadata": "^0.1.13",
-        "typescript": "^4.3.5"
+        "reflect-metadata": "^0.1.14",
+        "typescript": "^4.9.5"
     }
 }
