@@ -32,7 +32,7 @@
     "author": "Boris Okunskiy",
     "license": "ISC",
     "dependencies": {
-        "mesh-ioc": "^3.3.0",
+        "mesh-ioc": "^3.3.1",
         "reflect-utils": "^1.0.3"
     },
     "devDependencies": {
