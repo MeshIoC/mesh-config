@@ -72,7 +72,7 @@ export abstract class Config {
 
     abstract resolve(key: string): string | null;
 
-    static parsers: { [key: string]: ConfigParser<ConfigType> } = {
+    static parsers: Record<string, ConfigParser<ConfigType>> = {
         String: parseString,
         Number: parseNumber,
         Boolean: parseBoolean,
@@ -111,6 +111,7 @@ export abstract class Config {
 }
 
 export class MapConfig extends Config {
+
     map = new Map<string, string>();
 
     constructor(entries: Iterable<readonly [string, string | null | undefined]> = []) {
@@ -125,12 +126,15 @@ export class MapConfig extends Config {
     resolve(key: string): string | null {
         return this.map.get(key) ?? null;
     }
+
 }
 
 export class ProcessEnvConfig extends MapConfig {
+
     constructor() {
         super(Object.entries(process.env));
     }
+
 }
 
 function parseString(str: string): string | null {
@@ -147,5 +151,7 @@ function parseBoolean(str: string): boolean | null {
 }
 
 export class ConfigError extends Error {
+
     override name = this.constructor.name;
+
 }
