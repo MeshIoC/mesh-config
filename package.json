@@ -31,7 +31,7 @@
     },
     "author": "Boris Okunskiy",
     "license": "ISC",
-    "dependencies": {
+    "peerDependencies": {
         "mesh-ioc": "^4.1.1",
         "reflect-utils": "^1.1.1"
     },
