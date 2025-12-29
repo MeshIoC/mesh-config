@@ -32,11 +32,11 @@
     "author": "Boris Okunskiy",
     "license": "ISC",
     "dependencies": {
-        "@fastify/pre-commit": "^2.2.1",
         "mesh-ioc": "^4.1.1",
         "reflect-utils": "^1.1.1"
     },
     "devDependencies": {
+        "@fastify/pre-commit": "^2.2.1",
         "@nodescript/eslint-config": "^2.1.0",
         "@types/mocha": "^10.0.10",
         "@types/node": "^22.10.2",
