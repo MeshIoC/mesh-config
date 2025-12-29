@@ -32,7 +32,7 @@ export function config(options: ConfigOptions = {}) {
         Object.defineProperty(prototype, key, {
             get() {
                 const mesh = (this as any)[MESH_REF] as Mesh;
-                if (!(mesh instanceof Mesh)) {
+                if (!mesh) {
                     throw new ConfigError(`Could not read @config: ${prototype.constructor.name} not connected to Mesh`);
                 }
                 const config = mesh.resolve(Config);
