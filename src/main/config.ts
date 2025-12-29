@@ -116,6 +116,10 @@ export class MapConfig extends Config {
 
     constructor(entries: Iterable<readonly [string, string | null | undefined]> = []) {
         super();
+        this.setAll(entries);
+    }
+
+    setAll(entries: Iterable<readonly [string, string | null | undefined]>) {
         for (const [k, v] of entries) {
             if (v != null) {
                 this.map.set(k, v);
@@ -133,6 +137,11 @@ export class ProcessEnvConfig extends MapConfig {
 
     constructor() {
         super(Object.entries(process.env));
+    }
+
+    refresh() {
+        this.map.clear();
+        this.setAll(Object.entries(process.env));
     }
 
 }
